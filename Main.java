@@ -46,6 +46,6 @@ public class Main {
         scanner.close();
     }
     static void showBalance(double balance){
-        System.out.printf("$%f, balance");
+        System.out.printf("$%f", balance);
     }
 }
