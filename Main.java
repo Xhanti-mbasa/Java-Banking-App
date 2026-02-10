@@ -33,7 +33,7 @@ public class Main {
 
             switch(choice){
                 case 1 -> showBalance(balance);
-                case 2 -> balance = balance + deposit();
+                case 2 -> balance += deposit();
                 case 3 -> System.out.println("WITHDRAW");
                 case 4 -> isRunning = false;
                 default -> System.out.println("INVALID CHOICE");
@@ -56,11 +56,11 @@ public class Main {
     // deposit()
     static double deposit(){
         double amount;
-        System.out.print("Enter an amount to be deposited; 0");
+        System.out.print("Enter an amount to be deposited; \n");
         amount = scanner.nextDouble();
 
         if(amount < 0){
-            System.out.print("Amount can't be  negitave");
+            System.out.print("Amount can't be  negitave\n");
             return 0;
         }
         else{
