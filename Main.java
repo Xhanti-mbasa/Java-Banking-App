@@ -34,16 +34,15 @@ public class Main {
             switch(choice){
                 case 1 -> showBalance(balance);
                 case 2 -> balance += deposit();
-                case 3 -> System.out.println("WITHDRAW");
+                case 3 -> balance -= withdraw(balance);
                 case 4 -> isRunning = false;
                 default -> System.out.println("INVALID CHOICE");
             }
         }
-        // showBalance()
+
+        System.out.println("Thank you for using Xhanti's bank have a nice day GOODBYE! ");
 
 
-
-        // withdraw()
         //Betty waz her
         //EXIT MESSAGE
         scanner.close();
@@ -67,5 +66,24 @@ public class Main {
             return amount;
         }
     }
+    // withdraw()
+    static double withdraw(double balance){
 
+        double amount;
+
+        System.out.println("Enter amount to be withdrawn");
+        amount = scanner.nextDouble();
+
+        if(amount > balance){
+            System.out.print("You can't an amount larger than whats available in you account ");
+            return 0;
+        }
+        else if(amount < 0){
+            System.out.println("You can't withdraw a negative amount ");
+            return 0;
+        }
+        else{
+            return amount;
+        }
+    }
 }
