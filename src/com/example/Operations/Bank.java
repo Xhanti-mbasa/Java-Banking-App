@@ -1,3 +1,5 @@
+package src.com.example.Operations;
+
 public class Bank {
     private double balance = 0;
 
@@ -9,7 +11,7 @@ public class Bank {
         //Math for withdrawing.
         if (amount > 0 && amount <= balance) {
             this.balance -= amount;
-            return true; //succes
+            return true; //success
         }
         return false; //failed
     }

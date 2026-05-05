@@ -1,15 +1,17 @@
+package src.com.example.Operations;
+
 import java.util.Scanner;
 
 public class Client {
 
-    private Scanner scanner = new Scanner(System.in);
-    private Bank myBank = new Bank();
+    private final Scanner scanner = new Scanner(System.in);
+    private final Bank myBank = new Bank();
 
     public void startMenu() {
         boolean isRunning = true;
 
         while (isRunning) {
-            System.out.println("1. Show Balance\n2. Deposit\n3. Withdraw\n4. Exit");
+            System.out.println("1. Show Balance\n2. Deposit\n3. Withdraw\n4. MYZAR\n5. Exit");
             System.out.print("Enter choice: ");
 
             int choice = scanner.nextInt();
@@ -52,7 +54,15 @@ public class Client {
                         scanner.next();
                     }
                 }
-                case 4 -> isRunning = false;
+                case 4 -> {
+                    try {
+                        System.out.println(" How can MYZAR help?");
+                    } catch (Exception e){
+                        System.out.println("Sorry but MYZAR can't help with that.");
+                    }
+                }
+                case 5 -> isRunning = false;
+
                 default -> System.out.println("Invalid choice.");
             }
         }
