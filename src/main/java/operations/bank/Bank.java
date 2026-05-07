@@ -1,4 +1,4 @@
-package src.com.example.Operations;
+package operations.bank;
 
 public class Bank {
     private double balance = 0;

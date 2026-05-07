@@ -1,4 +1,4 @@
-import src.com.example.Operations.Client;
+import operations.client.Client;
 
 void main() {
     Client client = new Client();

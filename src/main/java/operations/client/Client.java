@@ -1,4 +1,6 @@
-package src.com.example.Operations;
+package operations.client;
+
+import operations.bank.Bank;
 
 import java.util.Scanner;
 
