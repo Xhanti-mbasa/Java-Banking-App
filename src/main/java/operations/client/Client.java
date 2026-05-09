@@ -1,5 +1,6 @@
 package operations.client;
 
+import operations.bank.AccountCreation;
 import operations.bank.Bank;
 
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class Client {
         boolean isRunning = true;
 
         while (isRunning) {
-            System.out.println("1. Show Balance\n2. Deposit\n3. Withdraw\n4. MYZAR\n5. Exit");
+            System.out.println("1. Show Balance\n2. Deposit\n3. Withdraw\n4. MYZAR\n5. New Member\n6. Exit");
             System.out.print("Enter choice: ");
 
             int choice = scanner.nextInt();
@@ -45,7 +46,7 @@ public class Client {
                         System.out.println("How much would you like to withdraw? ");
                         double amount = scanner.nextDouble();
 
-                        if (myBank.Withdraw(amount)) {
+                        if (myBank.withdraw(    amount)) {
                             System.out.println("Withdraw successful! Please take your cash.");
                         } else {
                             System.out.println("Error: Invalid amount or insufficient funds.");
@@ -63,7 +64,16 @@ public class Client {
                         System.out.println("Sorry but MYZAR can't help with that.");
                     }
                 }
-                case 5 -> isRunning = false;
+                case 5 -> {
+                    try {
+                        AccountCreation accountCreation = new AccountCreation();
+                        accountCreation.information();
+                        System.out.println("New member added successfully!");
+                    } catch (Exception e) {
+                        System.out.println("Error creating new member: " + e.getMessage());
+                    }
+                }
+                case 6 -> isRunning = false;
 
                 default -> System.out.println("Invalid choice.");
             }
