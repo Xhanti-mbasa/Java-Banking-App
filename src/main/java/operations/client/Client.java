@@ -59,7 +59,7 @@ public class Client {
                 }
                 case 4 -> {
                     try {
-                        System.out.println(" How can MYZAR help?");
+                        operations.ai.Myzar.askAi();
                     } catch (Exception e){
                         System.out.println("Sorry but MYZAR can't help with that.");
                     }
