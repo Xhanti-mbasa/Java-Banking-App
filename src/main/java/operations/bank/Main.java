@@ -5,5 +5,5 @@ void main() {
 
     client.startMenu();
 
-    IO.println("Thank you for using Xhanti's bank GOODBYE!");
+    System.out.println("Thank you for using Xhanti's bank GOODBYE!");
 }

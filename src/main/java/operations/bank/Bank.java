@@ -7,7 +7,7 @@ public class Bank {
         return balance;
     }
 
-    public boolean Withdraw(double amount) {
+    public boolean withdraw(double amount) {
         //Math for withdrawing.
         if (amount > 0 && amount <= balance) {
             this.balance -= amount;

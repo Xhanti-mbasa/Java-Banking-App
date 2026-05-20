@@ -9,7 +9,7 @@ import com.google.genai.types.GenerateContentResponse;
 public class GenerateTextFromTextInput {
     static void main() {
         Client client = Client.builder()
-                .apiKey("AIzaSyDRS5T_v_PfCCeNeR0BAofwsOqNHqovnQQ")
+                .apiKey("DEMO+AIzaSyDRS5T_v_PfCCeNeR0BAofdgegvefqNHqovnQQ")//This isn't and has never been a real api key.
                 .build();
 
         GenerateContentResponse response =
