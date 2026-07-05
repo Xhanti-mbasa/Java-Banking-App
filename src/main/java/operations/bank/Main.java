@@ -7,3 +7,4 @@ void main() {
 
     System.out.println("Thank you for using Xhanti's bank GOODBYE!");
 }
+
