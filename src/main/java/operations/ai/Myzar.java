@@ -1,3 +1,4 @@
+/*
 package operations.ai;
 
 import com.google.genai.Client;
@@ -31,3 +32,4 @@ public class Myzar {
         }
     }
 }
+ */
