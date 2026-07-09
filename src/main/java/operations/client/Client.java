@@ -58,11 +58,13 @@ public class Client {
                     }
                 }
                 case 4 -> {
-                    try {
-                        operations.ai.Myzar.askAi();
-                    } catch (Exception e){
-                        System.out.println("Sorry but MYZAR can't help with that.");
-                    }
+                    // TODO: Fix Myzar.askAi() when google-genai dependency is available
+                    // try {
+                    //     operations.ai.Myzar.askAi();
+                    // } catch (Exception e){
+                    //     System.out.println("Sorry but MYZAR can't help with that.");
+                    // }
+                    System.out.println("MYZAR AI feature is temporarily unavailable.");
                 }
                 case 5 -> {
                     try {
