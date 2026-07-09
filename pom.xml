@@ -30,11 +30,11 @@
         </dependency>
 
         <!-- Google Generative AI SDK (verified on Maven Central) -->
-    <!-- <dependency>
+    <dependency>
         <groupId>com.google.generativeai</groupId>
         <artifactId>google-generativeai</artifactId>
-        <version>0.9.0</version>
-    </dependency> -->
+        <version>1.0.0</version>
+    </dependency>
 
         <!-- JUnit 4 for testing -->
         <dependency>
