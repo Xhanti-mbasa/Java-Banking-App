@@ -2,11 +2,13 @@
 package operations.ai;
 
 import java.util.Scanner;
-import operations.client.Client;
-import com.google.ai.generativelanguage.v1beta2.GenerateContentResponse;
-
+import com.google.genai.Client;
+import com.google.genai.types.GenerateContentResponse;
 
 public class Myzar {
+    private Myzar() {
+    }
+
     public static void askAi() {
         String question = "";
         Scanner scanner = new Scanner(System.in);
@@ -20,12 +22,11 @@ public class Myzar {
                 .apiKey(System.getenv("API_KEY"))
                 .build()) {
 
-            GenerateContentResponse response =
-                    Client.models.generateContent(
-                            "gemini-1.5-flash",
-                            question,
-                            null
-                    );
+            GenerateContentResponse response = client.models.generateContent(
+                    "gemini-2.0-flash",
+                    question,
+                    null
+            );
 
             System.out.println(response.text());
         } catch (Exception e) {
@@ -33,3 +34,4 @@ public class Myzar {
         }
     }
 }
+ 
