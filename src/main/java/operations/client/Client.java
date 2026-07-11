@@ -2,10 +2,14 @@ package operations.client;
 
 import operations.bank.AccountCreation;
 import operations.bank.Bank;
+import java.util.logging.Logger;
+
 
 import java.util.Scanner;
 
 public class Client {
+      Logger logger = Logger.getLogger(getClass().getName());
+
 
     private final Scanner scanner = new Scanner(System.in);
     private final Bank myBank = new Bank();
@@ -14,70 +18,70 @@ public class Client {
         boolean isRunning = true;
 
         while (isRunning) {
-            System.out.println("1. Show Balance\n2. Deposit\n3. Withdraw\n4. MYZAR\n5. New Member\n6. Exit");
-            System.out.print("Enter choice: ");
+            logger.info("1. Show Balance\n2. Deposit\n3. Withdraw\n4. MYZAR\n5. New Member\n6. Exit");
+    logger.info("Enter choice: ");
 
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1 -> {
                     double currentBalance = myBank.getBalance();
-                    System.out.println("****************");
+                    logger.info("****************");
                     System.out.printf("Current Balance $%.2f\n", currentBalance);
-                    System.out.println("****************");
+                    logger.info("****************");
                 }
                 case 2 -> {
                     try {
-                        System.out.print("Enter amount to deposit: ");
+                        logger.info("Enter amount to deposit: ");
                         double amount = scanner.nextDouble();
 
                         if (myBank.deposit(amount)) {
-                            System.out.println("Deposit successful!");
+                            logger.info("Deposit successful!");
                         } else {
-                            System.out.println("Error: Please enter a positive number.");
+                            logger.info("Error: Please enter a positive number.");
                         }
                     } catch (Exception e) {
-                        System.out.println("Invalid input! Please enter a number.");
+                        logger.info("Invalid input! Please enter a number.");
                         scanner.next();
                     }
                 }
                 case 3 -> {
                     try {
-                        System.out.println("How much would you like to withdraw? ");
+                        logger.info("How much would you like to withdraw? ");
                         double amount = scanner.nextDouble();
 
                         if (myBank.withdraw(    amount)) {
-                            System.out.println("Withdraw successful! Please take your cash.");
+                            logger.info("Withdraw successful! Please take your cash.");
                         } else {
-                            System.out.println("Error: Invalid amount or insufficient funds.");
-                            System.out.printf("Available Balance: $%.2f\n", myBank.getBalance());
+                            logger.info("Error: Invalid amount or insufficient funds.");
+                            logger.info("Available Balance: $" + String.format("%.2f", myBank.getBalance()));
                         }
                     } catch (Exception e) {
-                        System.out.println("Invalid input! Please enter a numeric value.");
+                        logger.info("Invalid input! Please enter a numeric value.");
                         scanner.next();
                     }
                 }
-                case 4 -> {
+                /*case 4 -> {
                     // TODO: Fix Myzar.askAi() when google-genai dependency is available
                     // try {
                     //     operations.ai.Myzar.askAi();
                     // } catch (Exception e){
-                    //     System.out.println("Sorry but MYZAR can't help with that.");
+                    //     logger.info("Sorry but MYZAR can't help with that.");
                     // }
                     System.out.println("MYZAR AI feature is temporarily unavailable.");
-                }
+                } */
                 case 5 -> {
                     try {
                         AccountCreation accountCreation = new AccountCreation();
                         accountCreation.information();
-                        System.out.println("New member added successfully!");
+                        logger.info("New member added successfully!");
                     } catch (Exception e) {
-                        System.out.println("Error creating new member: " + e.getMessage());
+                        logger.info("Error creating new member: " + e.getMessage());
                     }
                 }
                 case 6 -> isRunning = false;
 
-                default -> System.out.println("Invalid choice.");
+                default -> logger.info("Invalid choice.");
             }
         }
     }
