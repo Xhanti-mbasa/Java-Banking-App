@@ -1,9 +1,10 @@
-/*
+
 package operations.ai;
 
-import com.google.genai.Client;
-import com.google.genai.types.GenerateContentResponse;
 import java.util.Scanner;
+import operations.client.Client;
+import com.google.ai.generativelanguage.v1beta2.GenerateContentResponse;
+
 
 public class Myzar {
     public static void askAi() {
@@ -20,7 +21,7 @@ public class Myzar {
                 .build()) {
 
             GenerateContentResponse response =
-                    client.models.generateContent(
+                    Client.models.generateContent(
                             "gemini-1.5-flash",
                             question,
                             null
