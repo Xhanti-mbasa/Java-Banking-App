@@ -11,11 +11,11 @@ public class Myzar {
 
     public static void askAi() {
         String question = "";
-        Scanner scanner = new Scanner(System.in);
-
-        while (question.isEmpty()) {
-            System.out.println("What would you like to know?");
-            question = scanner.nextLine();
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (question.isEmpty()) {
+                System.out.println("What would you like to know?");
+                question = scanner.nextLine();
+            }
         }
 
         try (Client client = Client.builder()
