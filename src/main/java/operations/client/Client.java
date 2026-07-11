@@ -61,15 +61,14 @@ public class Client {
                         scanner.next();
                     }
                 }
-                /*case 4 -> {
-                    // TODO: Fix Myzar.askAi() when google-genai dependency is available
-                    // try {
-                    //     operations.ai.Myzar.askAi();
-                    // } catch (Exception e){
-                    //     logger.info("Sorry but MYZAR can't help with that.");
-                    // }
+                case 4 -> {
+                    try {
+                        operations.ai.Myzar.askAi();
+                    } catch (Exception e){
+                        logger.info("Sorry but MYZAR can't help with that.");
+                    }
                     System.out.println("MYZAR AI feature is temporarily unavailable.");
-                } */
+                } 
                 case 5 -> {
                     try {
                         AccountCreation accountCreation = new AccountCreation();
